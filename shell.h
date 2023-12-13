@@ -189,9 +189,9 @@ int _getline(info_t *inf, char **ptr, size_t *length);
 void sigintHandler(__attribute__((unused))int sig_num);
 
 /* toem_getinfo.c */
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void clear_info(info_t *inf);
+void set_info(info_t *inf, char **av);
+void free_info(info_t *inf, int all);
 
 /* toem_environ.c */
 char *_getenv(info_t *inff, const char *namme);
@@ -201,23 +201,23 @@ int _myunsetenv(info_t *inff);
 int populate_env_list(info_t *inff);
 
 /* toem_getenv.c */
-char **get_environ(info_t *);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
+char **get_environ(info_t *inf);
+int _unsetenv(info_t *inf, char *var);
+int _setenv(info_t *inf, char *var, char *value);
 
 /* toem_history.c */
-char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
-int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+char *get_history_file(info_t *inf);
+int write_history(info_t *inf);
+int read_history(info_t *inf);
+int build_history_list(info_t *inf, char *buff, int lincount);
+int renumber_history(info_t *inf);
 
 /* toem_lists.c */
-list_t *add_node(list_t **, const char *, int);
-list_t *add_node_end(list_t **, const char *, int);
-size_t print_list_str(const list_t *);
-int delete_node_at_index(list_t **, unsigned int);
-void free_list(list_t **);
+list_t *add_node(list_t **headd, const char *str, int num);
+list_t *add_node_end(list_t **headd, const char *str, int num);
+size_t print_list_str(const list_t *hh);
+int delete_node_at_index(list_t **headd, unsigned int index);
+void free_list(list_t **head_ptr);
 
 /* toem_lists1.c */
 size_t list_len(const list_t *);
