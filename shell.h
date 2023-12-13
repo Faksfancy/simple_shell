@@ -179,8 +179,8 @@ int _mycd(info_t *inf);
 int _myhelp(info_t *inf);
 
 /* toem_builtin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int _myhistory(info_t *inf);
+int _myalias(info_t *inf);
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
@@ -193,11 +193,11 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* toem_environ.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+char *_getenv(info_t *inff, const char *namme);
+int _myenv(info_t *inff);
+int _mysetenv(info_t *inff);
+int _myunsetenv(info_t *inff);
+int populate_env_list(info_t *inff);
 
 /* toem_getenv.c */
 char **get_environ(info_t *);
