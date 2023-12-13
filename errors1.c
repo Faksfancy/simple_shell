@@ -112,7 +112,7 @@ char *convert_number(long int num, int base, int flags)
 	*ptr = '\0';
 
 	do	{
-		*--ptr = array[n % base];
+		*--ptr = array[nn % base];
 		nn /= base;
 	} while (nn != 0);
 
