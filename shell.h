@@ -145,9 +145,9 @@ void _puts(char *);
 int _putchar(char);
 
 /* toem_exits.c */
-char *_strncpy(char *, char *, int);
-char *_strncat(char *, char *, int);
-char *_strchr(char *, char);
+char *_strncpy(char *dst, char *srcc, int nn);
+char *_strncat(char *dst, char *srcc, int nn);
+char *_strchr(char *ss, char cc);
 
 /* toem_tokenizer.c */
 char **strtow(char *, char *);
@@ -184,9 +184,9 @@ int _myhistory(info_t *inf);
 int _myalias(info_t *inf);
 
 /*toem_getline.c */
-ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+ssize_t get_input(info_t *inf);
+int _getline(info_t *inf, char **ptr, size_t *length);
+void sigintHandler(__attribute__((unused))int sig_num);
 
 /* toem_getinfo.c */
 void clear_info(info_t *);
