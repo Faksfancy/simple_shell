@@ -161,10 +161,10 @@ void *_realloc(void *, unsigned int, unsigned int);
 int bfree(void **);
 
 /* toem_atoi.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
-int _atoi(char *);
+int interactive(info_t *inff);
+int is_delim(char cc, char *delimm);
+int _isalpha(int cc);
+int _atoi(char *ss);
 
 /* toem_errors1.c */
 int _erratoi(char *);
