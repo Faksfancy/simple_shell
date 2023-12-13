@@ -126,9 +126,9 @@ char *find_path(info_t *, char *, char *);
 int loophsh(char **);
 
 /* toem_errors.c */
-void _eputs(char *);
-int _eputchar(char);
-int _putfd(char c, int fd);
+void _eputs(char *str);
+int _eputchar(char cc);
+int _putfd(char cc, int fd);
 int _putsfd(char *str, int fd);
 
 /* toem_string.c */
@@ -167,11 +167,11 @@ int _isalpha(int cc);
 int _atoi(char *ss);
 
 /* toem_errors1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int _erratoi(char *st);
+void print_error(info_t *inf, char *estrr);
+int print_d(int input, int fd);
+char *convert_number(long int num, int base, int flags);
+void remove_comments(char *buff);
 
 /* toem_builtin.c */
 int _myexit(info_t *inf);
